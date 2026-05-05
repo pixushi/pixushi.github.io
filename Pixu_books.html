@@ -1,0 +1,386 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Pixu Shi's Homepage</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="template/style.css" title="style" />
+  <style>
+    .album {
+      width: 100%;
+      max-width: 600px;
+      margin: 1.8rem auto 2.4rem auto;
+      perspective: 1800px;
+    }
+    .album-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #fff;
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 6px;
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+    .album-slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      opacity: 0;
+      transform: rotateY(90deg);
+      transform-origin: left center;
+      transition: opacity 0.45s ease, transform 0.55s ease;
+      pointer-events: none;
+      backface-visibility: hidden;
+      padding: 0.5rem;
+    }
+    .album-slide.active {
+      opacity: 1;
+      transform: rotateY(0deg);
+      pointer-events: auto;
+      z-index: 2;
+    }
+    .album-slide.flip-out-left {
+      opacity: 0;
+      transform: rotateY(-90deg);
+      transform-origin: right center;
+    }
+    .album-slide.flip-out-right {
+      opacity: 0;
+      transform: rotateY(90deg);
+      transform-origin: left center;
+    }
+    .album-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 3px;
+    }
+    .album-prev, .album-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text, #1f2937);
+      border: 1px solid var(--border, #e5e7eb);
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: inherit;
+      line-height: 1;
+      z-index: 10;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    .album-prev:hover, .album-next:hover {
+      background: var(--accent, #7c2d3a);
+      color: #fff;
+      border-color: var(--accent, #7c2d3a);
+    }
+    .album-prev { left: 0.7rem; }
+    .album-next { right: 0.7rem; }
+    .album-caption {
+      text-align: center;
+      padding: 0.85rem 0 0.25rem 0;
+      color: var(--muted, #6b7280);
+      font-size: 0.88rem;
+      font-style: italic;
+      line-height: 1.5;
+      min-height: 1.3em;
+    }
+    .album-counter {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--soft, #9ca3af);
+      letter-spacing: 0.08em;
+      padding: 0.45rem 0 0 0;
+      text-transform: uppercase;
+    }
+    .album-dots {
+      text-align: center;
+      padding: 0.4rem 0 0 0;
+    }
+    .album-dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin: 0 4px;
+      border-radius: 50%;
+      background: #d1d5db;
+      cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
+      vertical-align: middle;
+    }
+    .album-dot:hover {
+      background: var(--soft, #9ca3af);
+    }
+    .album-dot.active {
+      background: var(--accent, #7c2d3a);
+      transform: scale(1.25);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1>Pixu Shi</h1>
+          <h2>Department of Biostatistics and Bioinformatics</h2>
+          <h2>Duke University</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Pixu_publication.html">Publication</a></li>
+          <li><a href="Pixu_software.html">Software</a></li>
+          <li><a href="Pixu_teaching.html">Teaching</a></li>
+          <li class="selected"><a href="Pixu_books.html">Authored Books</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <!-- insert your sidebar items here -->
+			<img src="Pixu_profile_square.jpg" width="195" align="middle">
+          </div>
+          <div class="sidebar_base"></div>
+	<div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <h2>Useful Links</h2>
+            <ul>
+              <li><a href="https://scholars.duke.edu/person/Pixu.Shi">My profile at Duke University</a></li>
+              <li><a href="https://github.com/pixushi">My GitHub Page</a></li>
+              <li><a href="https://scholar.google.com/citations?user=EbF6EYMAAAAJ&hl=en">My Google Scholar Page</a></li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        </div>
+      </div>
+      <div id="content">
+        <h4>《看图学统计》 &mdash; Picture Books in Statistics for Children</h4>
+        <p>
+          A four-book illustrated series that introduces foundational statistical
+          ideas to kindergarten and elementary-school readers. Each volume turns
+          one core concept into a story with friendly animal characters, with
+          bilingual Chinese&ndash;English text throughout. Published by
+          Hunan Science and Technology Press (湖南科学技术出版社), 2026.
+          Endorsed by Prof. Songxi Chen (Academician of the Chinese Academy of
+          Sciences), Prof. Tianxi Cai (Harvard Biostatistics), and Prof.
+          Hansheng Wang (Peking University Guanghua School of Management).
+        </p>
+
+        <div class="album" id="bookAlbum">
+          <div class="album-frame">
+            <div class="album-slide active" data-caption="The complete 看图学统计 series">
+              <img src="figures/IMG_5730.JPG" alt="The complete series">
+            </div>
+            <div class="album-slide" data-caption="Book 1 · Data Visualization — dedication page">
+              <img src="figures/IMG_5744.jpg" alt="Data Visualization dedication">
+            </div>
+            <div class="album-slide" data-caption="Book 1 · Data Visualization — bar chart with puppies">
+              <img src="figures/IMG_5747.JPG" alt="Data Visualization interior">
+            </div>
+            <div class="album-slide" data-caption="Book 2 · Normal Distribution — bunnies and the bell curve">
+              <img src="figures/IMG_5739.JPG" alt="Normal Distribution interior">
+            </div>
+            <div class="album-slide" data-caption="Book 3 · Hypothesis Testing — Mama Duck and the mystery egg">
+              <img src="figures/IMG_5753.jpg" alt="Hypothesis Testing interior">
+            </div>
+            <div class="album-slide" data-caption="Book 4 · Two-Sample Comparison — the monkeys' chestnut contest">
+              <img src="figures/IMG_5760.jpg" alt="Two-Sample Comparison interior">
+            </div>
+            <div class="album-slide" data-caption="Preface by Prof. Songxi Chen">
+              <img src="figures/IMG_5737.jpg" alt="Preface page">
+            </div>
+            <div class="album-slide" data-caption="Back cover with author bio and endorsements">
+              <img src="figures/IMG_5733.jpg" alt="Back cover">
+            </div>
+            <button class="album-prev" type="button" aria-label="Previous">&#10094;</button>
+            <button class="album-next" type="button" aria-label="Next">&#10095;</button>
+          </div>
+          <div class="album-counter" id="albumCounter">1 / 8</div>
+          <div class="album-caption" id="albumCaption">The complete 看图学统计 series</div>
+          <div class="album-dots" id="albumDots"></div>
+        </div>
+
+        <h4>Book 1 &middot; Data Visualization &mdash; Charting with Dogs</h4>
+        <p>
+          《和狗狗们一起做图》 &mdash; A pack of dogs fetching bones becomes the stage for five common chart types: a line chart for trends, a bar chart for comparisons, a histogram for distributions, a scatter plot for relationships, and a pie chart for proportions. Through these playful examples, children learn to use charts as a language for expressing and understanding data.
+        </p>
+        <p>
+          ISBN: 978-7-5710-3887-8
+        </p>
+
+        <h4>Book 2 &middot; Normal Distribution &mdash; The Bunnies' Bell Curve</h4>
+        <p>
+          《小兔子们的钟形曲线》 &mdash; Bunnies hop across a river on tree stumps, landing in slightly different spots each time. As the landings accumulate, a familiar shape emerges: high in the middle, low on the sides. Heights, running speeds, crop yields—the same curve appears in many places. Understanding it helps children see that in many situations, extreme outcomes are relatively rare while the majority falls in the middle—a perspective that can encourage a more balanced way of seeing the world.
+        </p>
+        <p>
+          ISBN: 978-7-5710-3888-5
+        </p>
+
+        <h4>Book 3 &middot; Hypothesis Testing &mdash; Mama Duck and the Mysterious Egg</h4>
+        <p>
+          《鸭妈妈和神秘的蛋》 &mdash; Mama Duck finds a mysterious egg and wants to know whether it is a chicken egg or a duck egg. She gathers data, builds distributions, and computes a p-value. Concepts such as the null and alternative hypotheses, as well as Type I and Type II errors, unfold within this small mystery. Children learn that when randomness is present, judgments are rarely simply right or wrong, but involve weighing evidence under uncertainty. Statistical thinking, in this sense, is about making informed decisions rather than seeking absolute certainty.
+        </p>
+        <p>
+          ISBN: 978-7-5710-3889-2
+        </p>
+
+        <h4>Book 4 &middot; Two-Sample Comparison &mdash; The Little Monkeys' Chestnut-Throwing Contest</h4>
+        <p>
+          《小猴子们的扔栗子比赛》 &mdash; Big Monkey Bro and Baby Monkey Sis (modeled on the author's two children) hold a chestnut-throwing contest. Each makes many throws with varying distances, so who wins? The maximum captures only the extreme; the mean uses every throw but is sensitive to outliers; the median is more robust; rank sum and average rank offer another perspective; spread and sample size influence the conclusion too. Different statistics can give different answers to the same contest, just as the same problem can often be approached in different ways. Learning how to choose the right approach for the question at hand is itself an important skill.
+        </p>
+        <p>
+          ISBN: 978-7-5710-3890-8
+        </p>
+
+        <h4>About the Series</h4>
+        <p>
+          The illustrations were generated with R: every dog, bone, egg, and
+          chestnut was hand-drawn on a tablet and then placed into a
+          statistical chart through the <code>rasterImage()</code> function.
+          Doing it this way preserves coordinate accuracy and reproducibility
+          &mdash; an inaccurate axis would mislead a young reader about the
+          quantitative relationship being shown. Each book pairs Chinese and
+          English text side by side, ships with companion videos in a
+          mother-and-son Q&amp;A format, and includes an activity booklet so
+          children can try making their own charts.
+        </p>
+
+        <p>
+          The series is available on JD.com, tmall.com, WeChat, and Xiaohongshu &mdash;
+          search for 看图学统计 to find it.
+        </p>
+
+      </div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+            Copyright &copy; textured_stars_light | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a>
+    </div>
+  </div>
+
+<script type="text/javascript">
+(function(){
+  var album = document.getElementById('bookAlbum');
+  if (!album) return;
+  var slides = album.querySelectorAll('.album-slide');
+  var prev = album.querySelector('.album-prev');
+  var next = album.querySelector('.album-next');
+  var caption = document.getElementById('albumCaption');
+  var counter = document.getElementById('albumCounter');
+  var dotsContainer = document.getElementById('albumDots');
+  var current = 0;
+
+  // build dots
+  for (var i = 0; i < slides.length; i++) {
+    var d = document.createElement('span');
+    d.className = 'album-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('data-index', i);
+    dotsContainer.appendChild(d);
+  }
+  var dots = dotsContainer.querySelectorAll('.album-dot');
+
+  function show(target, direction) {
+    if (target === current) return;
+    var outClass = direction === 'next' ? 'flip-out-left' : 'flip-out-right';
+    var currentSlide = slides[current];
+    var nextSlide = slides[target];
+
+    currentSlide.classList.remove('active');
+    currentSlide.classList.add(outClass);
+
+    // reset incoming slide's start position based on direction
+    nextSlide.style.transition = 'none';
+    nextSlide.style.transform = direction === 'next' ? 'rotateY(90deg)' : 'rotateY(-90deg)';
+    nextSlide.style.transformOrigin = direction === 'next' ? 'left center' : 'right center';
+    nextSlide.style.opacity = '0';
+    // force reflow
+    void nextSlide.offsetWidth;
+    nextSlide.style.transition = '';
+    nextSlide.classList.remove('flip-out-left', 'flip-out-right');
+    nextSlide.classList.add('active');
+    nextSlide.style.transform = '';
+    nextSlide.style.opacity = '';
+    nextSlide.style.transformOrigin = '';
+
+    setTimeout(function(){
+      currentSlide.classList.remove('flip-out-left', 'flip-out-right');
+    }, 700);
+
+    dots[current].classList.remove('active');
+    dots[target].classList.add('active');
+    current = target;
+    caption.textContent = nextSlide.getAttribute('data-caption') || '';
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+  }
+
+  function go(delta) {
+    var t = (current + delta + slides.length) % slides.length;
+    show(t, delta > 0 ? 'next' : 'prev');
+  }
+
+  prev.addEventListener('click', function(){ go(-1); });
+  next.addEventListener('click', function(){ go(1); });
+
+  for (var j = 0; j < dots.length; j++) {
+    dots[j].addEventListener('click', function(e){
+      var idx = parseInt(e.target.getAttribute('data-index'), 10);
+      if (idx === current) return;
+      show(idx, idx > current ? 'next' : 'prev');
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowLeft') go(-1);
+    else if (e.key === 'ArrowRight') go(1);
+  });
+
+  // initial caption
+  caption.textContent = slides[0].getAttribute('data-caption') || '';
+  counter.textContent = '1 / ' + slides.length;
+})();
+</script>
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=11414960;
+var sc_invisible=1;
+var sc_security="e117e79e";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="//c.statcounter.com/11414960/0/e117e79e/1/" alt="web
+analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+</body>
+</html>
