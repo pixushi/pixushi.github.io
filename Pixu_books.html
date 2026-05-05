@@ -12,7 +12,6 @@
       width: 100%;
       max-width: 600px;
       margin: 1.8rem auto 2.4rem auto;
-      perspective: 1800px;
     }
     .album-frame {
       position: relative;
@@ -22,7 +21,6 @@
       border: 1px solid var(--border, #e5e7eb);
       border-radius: 6px;
       overflow: hidden;
-      transform-style: preserve-3d;
       touch-action: pan-y;
       user-select: none;
       -webkit-user-select: none;
@@ -49,29 +47,16 @@
       align-items: center;
       justify-content: center;
       background: #fff;
-      opacity: 0;
-      transform: rotateY(90deg);
-      transform-origin: left center;
-      transition: opacity 0.45s ease, transform 0.55s ease;
+      transform: translateX(100%);
+      transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
       pointer-events: none;
-      backface-visibility: hidden;
       padding: 0.5rem;
+      will-change: transform;
     }
     .album-slide.active {
-      opacity: 1;
-      transform: rotateY(0deg);
+      transform: translateX(0);
       pointer-events: auto;
       z-index: 2;
-    }
-    .album-slide.flip-out-left {
-      opacity: 0;
-      transform: rotateY(-90deg);
-      transform-origin: right center;
-    }
-    .album-slide.flip-out-right {
-      opacity: 0;
-      transform: rotateY(90deg);
-      transform-origin: left center;
     }
     .album-slide img {
       max-width: 100%;
@@ -184,28 +169,6 @@
       </div>
     </div>
     <div id="site_content">
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <!-- insert your sidebar items here -->
-			<img src="Pixu_profile_square.jpg" width="195" align="middle">
-          </div>
-          <div class="sidebar_base"></div>
-	<div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <h2>Useful Links</h2>
-            <ul>
-              <li><a href="https://scholars.duke.edu/person/Pixu.Shi">My profile at Duke University</a></li>
-              <li><a href="https://github.com/pixushi">My GitHub Page</a></li>
-              <li><a href="https://scholar.google.com/citations?user=EbF6EYMAAAAJ&hl=en">My Google Scholar Page</a></li>
-            </ul>
-          </div>
-          <div class="sidebar_base"></div>
-        </div>
-        </div>
-      </div>
       <div id="content">
         <h4>《看图学统计》 &mdash; Picture Books in Statistics for Children</h4>
         <p>
@@ -326,30 +289,26 @@
 
   function show(target, direction) {
     if (target === current) return;
-    var outClass = direction === 'next' ? 'flip-out-left' : 'flip-out-right';
     var currentSlide = slides[current];
     var nextSlide = slides[target];
 
-    currentSlide.classList.remove('active');
-    currentSlide.classList.add(outClass);
+    // For "next": incoming starts on the right (+100%), outgoing rolls to the left (-100%)
+    // For "prev": incoming starts on the left (-100%), outgoing rolls to the right (+100%)
+    var incomingFrom = direction === 'next' ? '100%' : '-100%';
+    var outgoingTo   = direction === 'next' ? '-100%' : '100%';
 
-    // reset incoming slide's start position based on direction
+    // Place incoming slide off-screen instantly on the correct side
     nextSlide.style.transition = 'none';
-    nextSlide.style.transform = direction === 'next' ? 'rotateY(90deg)' : 'rotateY(-90deg)';
-    nextSlide.style.transformOrigin = direction === 'next' ? 'left center' : 'right center';
-    nextSlide.style.opacity = '0';
-    // force reflow
+    nextSlide.style.transform = 'translateX(' + incomingFrom + ')';
+    // force reflow so the no-transition position takes effect before we animate
     void nextSlide.offsetWidth;
     nextSlide.style.transition = '';
-    nextSlide.classList.remove('flip-out-left', 'flip-out-right');
+
+    // Slide outgoing off, slide incoming in
+    currentSlide.classList.remove('active');
+    currentSlide.style.transform = 'translateX(' + outgoingTo + ')';
     nextSlide.classList.add('active');
     nextSlide.style.transform = '';
-    nextSlide.style.opacity = '';
-    nextSlide.style.transformOrigin = '';
-
-    setTimeout(function(){
-      currentSlide.classList.remove('flip-out-left', 'flip-out-right');
-    }, 700);
 
     dots[current].classList.remove('active');
     dots[target].classList.add('active');
