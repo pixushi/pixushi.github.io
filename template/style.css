@@ -174,14 +174,58 @@ code {
   width: 100%;
   height: auto;
   border-bottom: 1px solid var(--border);
-  padding: 0.5rem 0 1.2rem 0;
+  padding: 0.6rem 0 1.2rem 0;
   margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 #logo_text {
   position: static;
   top: auto;
   left: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Photo on the right side of the header (index page) */
+#logo > .profile-photo {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  display: block;
+}
+
+/* Useful Links block sitting under the name/department (index page) */
+#logo_text .profile-info {
+  margin: 1rem 0 0 0;
+  width: 100%;
+}
+
+#logo_text .profile-info h3 {
+  margin: 0 0 0.4rem 0;
+}
+
+#logo_text .profile-info ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#logo_text .profile-info li {
+  list-style: none;
+  margin: 0 0 0.3rem 0;
+  padding: 0;
+  line-height: 1.4;
+  background: none;
+}
+
+#logo_text .profile-info li a {
+  font-size: 0.9rem;
 }
 
 #logo h1, #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
@@ -559,6 +603,17 @@ table tr td {
 
   #site_content {
     padding-top: 1.25rem;
+  }
+
+  #logo {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  #logo > .profile-photo {
+    width: 130px;
+    align-self: flex-start;
   }
 
   .profile-card {
