@@ -8,6 +8,16 @@
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="template/style.css" title="style" />
+  <style>
+    .pub-tabs { display: flex; flex-wrap: wrap; gap: 0.4em; margin: 0.5em 0 1.2em; }
+    .pub-tab { font: inherit; font-size: 0.9rem; padding: 0.3em 0.9em; border: 1px solid var(--accent); border-radius: 999px; background: transparent; color: var(--accent); cursor: pointer; }
+    .pub-tab:hover { background: var(--rule); }
+    .pub-tab.active { background: var(--accent); color: #fff; }
+    #pub-list > li { margin-bottom: 0.8em; }
+    .pub-labels { margin-top: 0.25em; }
+    .pub-label { display: inline-block; font-size: 0.75rem; line-height: 1.4; padding: 0.05em 0.6em; margin: 0 0.3em 0.2em 0; border-radius: 999px; background: var(--rule); color: var(--accent); cursor: pointer; }
+    .pub-label:hover { background: var(--accent); color: #fff; }
+  </style>
 </head>
 
 <body>
@@ -34,146 +44,183 @@
     </div>
     <div id="site_content">
       <div id="content">
-		<h4>Statistical methods</h4>
-		<ul>
-
-<li>Lindsley, L., Settle, A., <strong>Shi, P.</strong> (2026): <a href="https://www.biorxiv.org/content/10.64898/2026.09.01.748608v1">multiTEMPTED: Joint Dimensionality Reduction of Longitudinal Multi-omic Data with Modality-Specific Temporal Dynamics.</a> <br />
-             <I>Frontiers in Cellular and Infection Microbiology</I>, in press.<br />
-</li>
-
-<li>Tan, J., <strong>Shi, P.</strong> (2026): <a href = "https://arxiv.org/abs/2601.13405">Associating High-Dimensional Longitudinal Datasets through an Efficient Cross-Covariance Decomposition. </a> <br />
-             <I>Biostatistics</I>, in press.<br />
-</li>
-
-<li>Tan, J., <strong>Shi, P.</strong>, Zhang, A. R. (2026): <a href = "https://arxiv.org/abs/2606.29105">Panel Flow Matching: A Generative Approach to Learning Distributions of Longitudinal Data. </a> <br />
-             <I>arXiv preprint arXiv:2606.29105</I><br />
-</li>
-
-<li>Tan, J., <strong>Shi, P.</strong>, Zhang, A. R. (2026): <a href = "https://www.tandfonline.com/doi/full/10.1080/01621459.2026.2625441">Functional-SVD for Heterogeneous Trajectories: Case Studies in Health. </a> <br />
-             <I>Journal of the American Statistical Association</I>, 00(0), 1-16.<br />
-</li>
-
-<li>Zhuang, H., Gai, X., Zhang, A. R., Ji, Z., <strong>Shi, P.</strong> (2026): <a href = "https://academic.oup.com/bioinformatics/article/42/5/btag192/8661458">Trajectory-guided dimension reduction for multi-sample single-cell RNA-seq data reveals sample-level heterogeneity. </a> <br />
-             <I>Bioinformatics</I>, 42(5), btag192.<br />
-</li>
-
-
-
-<li>Alam, M. S., Staicu, A., and <strong>Shi, P.</strong> (2024+): <a href = "https://arxiv.org/pdf/2409.13819">Supervised Low-Rank Approximation of High-Dimensional Multivariate Functional Data via Tensor Decomposition.</a> <br /> 
-             <I>arXiv</I><br />
-</li>		
-
-<li><strong>Shi, P. et al.</strong> (2024): <a href = "https://link.springer.com/article/10.1186/s13059-024-03453-x">Time-Informed Dimensionality Reduction for Longitudinal Microbiome Studies.</a> <br /> 
-             <I>Genome Biology</I>, 25 (1), 317<br />
-</li>	
-
-<li>Han, R., <strong>Shi, P.</strong> and Zhang, A. R. (2024): <a href = "https://www.tandfonline.com/doi/abs/10.1080/01621459.2022.2153689">Guaranteed Functional Tensor Singular Value Decomposition.</a> <br /> 
-             <I>Journal of the American Statistical Association</I>, 119 (546), 995-1007.<br />
-</li>
-
-    <li><strong>Shi, P.</strong>, Zhou, Y. and Zhang, A. R. (2022): <a href = "https://academic.oup.com/biomet/advance-article-abstract/doi/10.1093/biomet/asab020/6203806">High-dimensional Log-Error-in-Variable Regression with Applications to Microbial Compositional Data Analysis.</a> <br /> 
-            <I>Biometrika</I>, 109(2): 405-420.<br />
+    <div class="pub-tabs" role="tablist">
+      <button type="button" class="pub-tab active" data-filter="all">All</button>
+      <button type="button" class="pub-tab" data-filter="stat">Statistical methods</button>
+      <button type="button" class="pub-tab" data-filter="microbiome">Microbiome research</button>
+      <button type="button" class="pub-tab" data-filter="multiomics">Multi-omics</button>
+      <button type="button" class="pub-tab" data-filter="longitudinal">Longitudinal omics</button>
+      <button type="button" class="pub-tab" data-filter="spatial">Spatial omics</button>
+      <button type="button" class="pub-tab" data-filter="genomics">Genomics</button>
+    </div>
+    <ul id="pub-list">
+    <li data-tags="stat microbiome multiomics longitudinal">
+      Lindsley, L., Settle, A., <strong>Shi, P.</strong> (2026): <a href="https://www.biorxiv.org/content/10.64898/2026.09.01.748608v1">multiTEMPTED: Joint Dimensionality Reduction of Longitudinal Multi-omic Data with Modality-Specific Temporal Dynamics.</a> <br />
+      <I>Frontiers in Cellular and Infection Microbiology</I>, in press.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="microbiome">Microbiome research</span> <span class="pub-label" data-filter="multiomics">Multi-omics</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
     </li>
-    
-    <li>Lu, J. <strong>Shi, P.</strong> and Li, H. (2019): <a href = "https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.12956">Generalized Linear Models with Linear Constraints for Microbiome Compositional Data.</a> <br /> 
-            <I>Biometrics</I>, 75(1): 235-244.<br />
+    <li data-tags="stat multiomics longitudinal">
+      Tan, J., <strong>Shi, P.</strong> (2026): <a href = "https://arxiv.org/abs/2601.13405">Associating High-Dimensional Longitudinal Datasets through an Efficient Cross-Covariance Decomposition. </a> <br />
+      <I>Biostatistics</I>, in press.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="multiomics">Multi-omics</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
     </li>
-    
-    <li><strong>Shi, P.</strong> and Li, H. (2017): <a href = "http://onlinelibrary.wiley.com/doi/10.1111/biom.12681/full">A model for paired-multinomial data and its application to analysis of data on a taxonomic tree.</a> <br />
-			<I>Biometrics</I>, 73(4): 1266-1278.<br />
-            <a href = "https://github.com/pixushi/correlated_multinomial">Download the R codes</a>
-			</li>
-			
-    <li><strong>Shi, P.</strong>, Zhang, A. and Li, H. (2016): <a href = "https://projecteuclid.org/euclid.aoas/1469199903">Regression analysis for microbiome compositional data.</a> <br />
-			<I>Annals of Applied Statistics</I>, 10(2): 1019-1040. <br />
-            <a href = "https://github.com/pixushi/CI_compositional_regression">Download the Matlab codes</a>
-			</li>
-			
-    <li>Fogarty, C. B., <strong>Shi, P.</strong>, Mikkelsen, M. E. and Small, D. S. (2014): <a href = "http://www.tandfonline.com/doi/abs/10.1080/01621459.2016.1138865">Randomization inference and sensitivity analysis
-for composite null hypotheses with binary
-outcomes in matched observational studies.</a> <br />
-			<I>Journal of the American Statistical Association</I>, 112(517): 321-331.
-			</li>
-			
-			<li>Lin, W., <strong>Shi, P.</strong>, Feng, R. and Li, H. (2014): <a href = "https://academic.oup.com/biomet/article/101/4/785/1775476/Variable-selection-in-regression-with">Variable selection in regression with compositional covariates.</a> <br />
-			<I>Biometrika</I>, 101(4): 785-797. <br />
-            <a href = "https://github.com/pixushi/constrained_lasso">Download the R codes</a>
-			</li>
-			
-
-		</ul>
-		<h4>Microbiome and omics</h4>
-		<ul>
-
-    <li>Wu, Q., Brigande, A. M., Lutz, M. W., <strong>Shi, P.</strong>, Disney, A. A. (2026): <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EbF6EYMAAAAJ&sortby=pubdate&citation_for_view=EbF6EYMAAAAJ:QIV2ME_5wuYC">Integrated metabolomics and proteomics from voxelated cortical hemispheres of adult rhesus monkeys.</a> <br />
-             <I>bioRxiv</I>, 2026.04.04.716423<br />
+    <li data-tags="stat longitudinal">
+      Tan, J., <strong>Shi, P.</strong>, Zhang, A. R. (2026): <a href = "https://arxiv.org/abs/2606.29105">Panel Flow Matching: A Generative Approach to Learning Distributions of Longitudinal Data. </a> <br />
+      <I>arXiv preprint arXiv:2606.29105</I><br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
     </li>
-
-    <li>Deveaux, A. et al. (2026): Characterizing the composition and diversity of the vaginal microbiome in ovarian cancer. <br />
-             <I>Communications Medicine</I>, 2026.<br />
+    <li data-tags="stat">
+      Tan, J., <strong>Shi, P.</strong>, Zhang, A. R. (2026): <a href = "https://www.tandfonline.com/doi/full/10.1080/01621459.2026.2625441">Functional-SVD for Heterogeneous Trajectories: Case Studies in Health. </a> <br />
+      <I>Journal of the American Statistical Association</I>, 00(0), 1-16.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span></div>
     </li>
-
-    <li>McCann, J. R. et al. (2026): <a href="https://www.jci.org/articles/view/196742">Branched chain amino acid metabolism and microbiome in adolescents with obesity during weight loss therapy.</a> <br />
-             <I>Journal of Clinical Investigation</I>, 136(14).<br />
+    <li data-tags="stat genomics">
+      Zhuang, H., Gai, X., Zhang, A. R., Ji, Z., <strong>Shi, P.</strong> (2026): <a href = "https://academic.oup.com/bioinformatics/article/42/5/btag192/8661458">Trajectory-guided dimension reduction for multi-sample single-cell RNA-seq data reveals sample-level heterogeneity. </a> <br />
+      <I>Bioinformatics</I>, 42(5), btag192.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="genomics">Genomics</span></div>
     </li>
-
-<li>Wilson, K. M., et al., <strong>Shi, P.</strong>, Patel, S. M. (2026): <a href="https://academic.oup.com/ajrccm/article/212/Supplement_1/aamag162.4268/8683681">Characterizing the Nasopharyngeal Microbiome of Adult Women Living With Human Immunodeficiency Virus (HIV) in Botswana.</a> <br />
-             <I>American Journal of Respiratory and Critical Care Medicine</I>, 212(Supplement_1), aamag162.4268.<br />
-</li>
-
-    <li>Kelly, M. S., <strong>Shi, P.</strong>, et al. (2025): <a href = "https://www.nature.com/articles/s41467-025-60552-4">Role of the upper airway microbiota in respiratory virus and bacterial pathobiont dynamics in the first year of life.</a> <br />
-             <I>Nature Communications</I>, 16 (1), 1-13.<br />
+    <li data-tags="multiomics spatial">
+      Wu, Q., Brigande, A. M., Lutz, M. W., <strong>Shi, P.</strong>, Disney, A. A. (2026): <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EbF6EYMAAAAJ&sortby=pubdate&citation_for_view=EbF6EYMAAAAJ:QIV2ME_5wuYC">Integrated metabolomics and proteomics from voxelated cortical hemispheres of adult rhesus monkeys.</a> <br />
+      <I>bioRxiv</I>, 2026.04.04.716423<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="multiomics">Multi-omics</span> <span class="pub-label" data-filter="spatial">Spatial omics</span></div>
     </li>
-
-    <li>Kim, Y. J., McQuade, V. L., <strong>Shi, P.</strong>, et al. (2025): <a href = "https://www.tandfonline.com/doi/full/10.2147/JAA.S478329">Glucagon-like peptide 1 receptor (Glp1r) deficiency does not appreciably alter airway inflammation or gut-lung microbiome axis in a mouse model of obese allergic airways disease and bariatric surgery. </a> <br />
-             <I>Journal of Asthma and Allergy</I>, 285-305.<br />
+    <li data-tags="microbiome">
+      Deveaux, A. et al. (2026): Characterizing the composition and diversity of the vaginal microbiome in ovarian cancer. <br />
+      <I>Communications Medicine</I>, 2026.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
     </li>
-
-    <li>Serbanescu, M. A., et al. (2025): <a href = "https://link.springer.com/article/10.1186/s12916-025-04511-2">Impact of fiber-containing enteral nutrition on microbial community dynamics in critically ill trauma patients: a pilot-randomized trial. </a> <br />
-             <I>BMC Medicine</I>, 23 (1), 706.<br />
+    <li data-tags="microbiome multiomics longitudinal">
+      McCann, J. R. et al. (2026): <a href="https://www.jci.org/articles/view/196742">Branched chain amino acid metabolism and microbiome in adolescents with obesity during weight loss therapy.</a> <br />
+      <I>Journal of Clinical Investigation</I>, 136(14).<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span> <span class="pub-label" data-filter="multiomics">Multi-omics</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
     </li>
-
-    <li>Seitz, V. A. et al. (2025): CaDAVEr: a metagenome-assembled genome catalog of microbial decomposers across vertebrate environments. <br />
-             <I>Microbiology Resource Announcements</I>, e01323-24.<br />
+    <li data-tags="microbiome">
+      Wilson, K. M., et al., <strong>Shi, P.</strong>, Patel, S. M. (2026): <a href="https://academic.oup.com/ajrccm/article/212/Supplement_1/aamag162.4268/8683681">Characterizing the Nasopharyngeal Microbiome of Adult Women Living With Human Immunodeficiency Virus (HIV) in Botswana.</a> <br />
+      <I>American Journal of Respiratory and Critical Care Medicine</I>, 212(Supplement_1), aamag162.4268.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
     </li>
-
-    <li>Kennedy, L. B., et al. (2025): A comprehensive, multi-center, immunogenomic analysis of melanoma brain metastases. <br />
-             <I>Acta Neuropathologica Communications</I>, 13, 123.<br />
+    <li data-tags="microbiome longitudinal">
+      Kelly, M. S., <strong>Shi, P.</strong>, et al. (2025): <a href = "https://www.nature.com/articles/s41467-025-60552-4">Role of the upper airway microbiota in respiratory virus and bacterial pathobiont dynamics in the first year of life.</a> <br />
+      <I>Nature Communications</I>, 16 (1), 1-13.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
     </li>
-
-    <li>Van Swearingen, A. E. D., et al. (2025): Genomic and immune profiling of breast cancer brain metastases. <br />
-             <I>Acta Neuropathologica Communications</I>, 13, 99.<br />
+    <li data-tags="microbiome">
+      Kim, Y. J., McQuade, V. L., <strong>Shi, P.</strong>, et al. (2025): <a href = "https://www.tandfonline.com/doi/full/10.2147/JAA.S478329">Glucagon-like peptide 1 receptor (Glp1r) deficiency does not appreciably alter airway inflammation or gut-lung microbiome axis in a mouse model of obese allergic airways disease and bariatric surgery. </a> <br />
+      <I>Journal of Asthma and Allergy</I>, 285-305.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
     </li>
-
-    
-    <li>Hudson, A., et al., <strong>Shi, P.</strong>, and Reeves, K. (2025): <a href = "https://journals.asm.org/doi/10.1128/jvi.01634-24">Longitudinal analysis of rhesus macaque metabolome during acute SIV infection reveals disruption in broad metabolite classes.</a>  <br />
-             <I>Journal of Virology</I>, 99(3), e0163424.<br />
-             
-    </li> 
-    
-    <li>Burcham A. M. et al. (2024): <a href = "https://www.nature.com/articles/s41564-023-01580-y">A Conserved Interdomain Microbial Network Underpins Cadaver Decomposition Despite Environmental Variables</a> <br /> 
-             <I>Nature Microbiology</I>, 9 (3), 595-613 <br />
-    </li> 
-    
-    <li>Schweickart, A. et al. (2024): <a href = "https://www.nature.com/articles/s44324-024-00016-3">Serum and CSF Metabolomics Analysis Shows Mediterranean Ketogenic Diet Mitigates Risk Factors of Alzheimer's Disease</a> <br /> 
-             <I>npj Metabolic Health and Disease</I>, 2(1), 15<br />
-    </li> 
-
-    <li>SenNet Consortium (2022): <a href = "https://www.nature.com/articles/s43587-022-00326-5">NIH SenNet Consortium to map senescent cells throughout the human lifespan to understand physiological health. </a> <br />
-    <I>Nature Aging</I>, 1-11. (<strong>Shi, P.</strong> among other authors as a member of
-the SenNet consortium) <br />
+    <li data-tags="microbiome longitudinal">
+      Serbanescu, M. A., et al. (2025): <a href = "https://link.springer.com/article/10.1186/s12916-025-04511-2">Impact of fiber-containing enteral nutrition on microbial community dynamics in critically ill trauma patients: a pilot-randomized trial. </a> <br />
+      <I>BMC Medicine</I>, 23 (1), 706.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
     </li>
-    
-		</ul>
-		<h4>Other</h4>
-		<ul>
-		  
-			
-      <li><strong>Shi, P.</strong> and Zhang, A. R. (2025): <a href="https://link.springer.com/article/10.1007/s11425-023-2375-y">Calculating the upper bound of the Gini coefficient using grouped data and a case study of China. </a><br />
-                   <I>Science China Mathematics</I>, 1-18.<br />
-      </li>
-
-		</ul>
+    <li data-tags="microbiome genomics">
+      Seitz, V. A. et al. (2025): CaDAVEr: a metagenome-assembled genome catalog of microbial decomposers across vertebrate environments. <br />
+      <I>Microbiology Resource Announcements</I>, e01323-24.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span> <span class="pub-label" data-filter="genomics">Genomics</span></div>
+    </li>
+    <li data-tags="genomics">
+      Kennedy, L. B., et al. (2025): A comprehensive, multi-center, immunogenomic analysis of melanoma brain metastases. <br />
+      <I>Acta Neuropathologica Communications</I>, 13, 123.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="genomics">Genomics</span></div>
+    </li>
+    <li data-tags="genomics">
+      Van Swearingen, A. E. D., et al. (2025): Genomic and immune profiling of breast cancer brain metastases. <br />
+      <I>Acta Neuropathologica Communications</I>, 13, 99.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="genomics">Genomics</span></div>
+    </li>
+    <li data-tags="longitudinal">
+      Hudson, A., et al., <strong>Shi, P.</strong>, and Reeves, K. (2025): <a href = "https://journals.asm.org/doi/10.1128/jvi.01634-24">Longitudinal analysis of rhesus macaque metabolome during acute SIV infection reveals disruption in broad metabolite classes.</a>  <br />
+      <I>Journal of Virology</I>, 99(3), e0163424.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
+    </li>
+    <li data-tags="stat">
+      <strong>Shi, P.</strong> and Zhang, A. R. (2025): <a href="https://link.springer.com/article/10.1007/s11425-023-2375-y">Calculating the upper bound of the Gini coefficient using grouped data and a case study of China. </a><br />
+      <I>Science China Mathematics</I>, 1-18.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span></div>
+    </li>
+    <li data-tags="stat longitudinal">
+      Alam, M. S., Staicu, A., and <strong>Shi, P.</strong> (2024+): <a href = "https://arxiv.org/pdf/2409.13819">Supervised Low-Rank Approximation of High-Dimensional Multivariate Functional Data via Tensor Decomposition.</a> <br />
+      <I>arXiv</I><br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
+    </li>
+    <li data-tags="stat microbiome longitudinal">
+      <strong>Shi, P. et al.</strong> (2024): <a href = "https://link.springer.com/article/10.1186/s13059-024-03453-x">Time-Informed Dimensionality Reduction for Longitudinal Microbiome Studies.</a> <br />
+      <I>Genome Biology</I>, 25 (1), 317<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="microbiome">Microbiome research</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
+    </li>
+    <li data-tags="stat longitudinal">
+      Han, R., <strong>Shi, P.</strong> and Zhang, A. R. (2024): <a href = "https://www.tandfonline.com/doi/abs/10.1080/01621459.2022.2153689">Guaranteed Functional Tensor Singular Value Decomposition.</a> <br />
+      <I>Journal of the American Statistical Association</I>, 119 (546), 995-1007.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="longitudinal">Longitudinal omics</span></div>
+    </li>
+    <li data-tags="microbiome">
+      Burcham A. M. et al. (2024): <a href = "https://www.nature.com/articles/s41564-023-01580-y">A Conserved Interdomain Microbial Network Underpins Cadaver Decomposition Despite Environmental Variables</a> <br />
+      <I>Nature Microbiology</I>, 9 (3), 595-613 <br />
+      <div class="pub-labels"><span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
+    </li>
+    <li data-tags="multiomics">
+      Schweickart, A. et al. (2024): <a href = "https://www.nature.com/articles/s44324-024-00016-3">Serum and CSF Metabolomics Analysis Shows Mediterranean Ketogenic Diet Mitigates Risk Factors of Alzheimer's Disease</a> <br />
+      <I>npj Metabolic Health and Disease</I>, 2(1), 15<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="multiomics">Multi-omics</span></div>
+    </li>
+    <li data-tags="stat microbiome">
+      <strong>Shi, P.</strong>, Zhou, Y. and Zhang, A. R. (2022): <a href = "https://academic.oup.com/biomet/advance-article-abstract/doi/10.1093/biomet/asab020/6203806">High-dimensional Log-Error-in-Variable Regression with Applications to Microbial Compositional Data Analysis.</a> <br />
+      <I>Biometrika</I>, 109(2): 405-420.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
+    </li>
+    <li data-tags="spatial">
+      SenNet Consortium (2022): <a href = "https://www.nature.com/articles/s43587-022-00326-5">NIH SenNet Consortium to map senescent cells throughout the human lifespan to understand physiological health. </a> <br />
+      <I>Nature Aging</I>, 1-11. (<strong>Shi, P.</strong> among other authors as a member of
+      the SenNet consortium) <br />
+      <div class="pub-labels"><span class="pub-label" data-filter="spatial">Spatial omics</span></div>
+    </li>
+    <li data-tags="stat microbiome">
+      Lu, J. <strong>Shi, P.</strong> and Li, H. (2019): <a href = "https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.12956">Generalized Linear Models with Linear Constraints for Microbiome Compositional Data.</a> <br />
+      <I>Biometrics</I>, 75(1): 235-244.<br />
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
+    </li>
+    <li data-tags="stat microbiome">
+      <strong>Shi, P.</strong> and Li, H. (2017): <a href = "http://onlinelibrary.wiley.com/doi/10.1111/biom.12681/full">A model for paired-multinomial data and its application to analysis of data on a taxonomic tree.</a> <br />
+      <I>Biometrics</I>, 73(4): 1266-1278.<br />
+      <a href = "https://github.com/pixushi/correlated_multinomial">Download the R codes</a>
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
+    </li>
+    <li data-tags="stat microbiome">
+      <strong>Shi, P.</strong>, Zhang, A. and Li, H. (2016): <a href = "https://projecteuclid.org/euclid.aoas/1469199903">Regression analysis for microbiome compositional data.</a> <br />
+      <I>Annals of Applied Statistics</I>, 10(2): 1019-1040. <br />
+      <a href = "https://github.com/pixushi/CI_compositional_regression">Download the Matlab codes</a>
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
+    </li>
+    <li data-tags="stat">
+      Fogarty, C. B., <strong>Shi, P.</strong>, Mikkelsen, M. E. and Small, D. S. (2014): <a href = "http://www.tandfonline.com/doi/abs/10.1080/01621459.2016.1138865">Randomization inference and sensitivity analysis
+      for composite null hypotheses with binary
+      outcomes in matched observational studies.</a> <br />
+      <I>Journal of the American Statistical Association</I>, 112(517): 321-331.
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span></div>
+    </li>
+    <li data-tags="stat microbiome">
+      Lin, W., <strong>Shi, P.</strong>, Feng, R. and Li, H. (2014): <a href = "https://academic.oup.com/biomet/article/101/4/785/1775476/Variable-selection-in-regression-with">Variable selection in regression with compositional covariates.</a> <br />
+      <I>Biometrika</I>, 101(4): 785-797. <br />
+      <a href = "https://github.com/pixushi/constrained_lasso">Download the R codes</a>
+      <div class="pub-labels"><span class="pub-label" data-filter="stat">Statistical methods</span> <span class="pub-label" data-filter="microbiome">Microbiome research</span></div>
+    </li>
+    </ul>
+    <script>
+    (function () {
+      var tabs = document.querySelectorAll('.pub-tab');
+      var pubs = document.querySelectorAll('#pub-list > li');
+      function show(f) {
+        tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.filter === f); });
+        pubs.forEach(function (li) {
+          var t = (li.dataset.tags || '').split(' ');
+          li.style.display = (f === 'all' || t.indexOf(f) > -1) ? '' : 'none';
+        });
+      }
+      tabs.forEach(function (t) { t.addEventListener('click', function () { show(t.dataset.filter); }); });
+      document.querySelectorAll('.pub-label').forEach(function (l) { l.addEventListener('click', function () { show(l.dataset.filter); window.scrollTo({ top: document.querySelector('.pub-tabs').offsetTop - 20, behavior: 'smooth' }); }); });
+    })();
+    </script>
       </div>
     </div>
     <div id="content_footer"></div>
